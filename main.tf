@@ -74,7 +74,7 @@ resource "aws_security_group" "TF_SG" {
 }
 
 resource "local_file" "inventory" {
-  filename = "Ansible-Docker/inventory.ini"
+  filename = "ansible/inventory.ini"
   content  = <<-EOT
     [server]
     ${aws_instance.app_server.public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=/home/saurabh/Downloads/tf-key.pem
